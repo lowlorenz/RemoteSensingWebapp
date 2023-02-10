@@ -4,7 +4,6 @@ Here's our first attempt at using data to create a table:
 """
 
 import streamlit as st
-import pandas as pd
 import PIL.Image as Image
 
 from evaluation import bleu, rouge, meteor
@@ -31,7 +30,7 @@ meteor_score = meteor(references, hypothesis)
 
 col1, col2, col3 = st.columns((1, 3, 1))
 
-img = Image.open('test_images/' + image)
+img = Image.open("test_images/" + image)
 with col1:
     st.write(" ")
 
