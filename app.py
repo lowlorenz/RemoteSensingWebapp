@@ -41,7 +41,8 @@ with col2:
     c2.metric(label="ROUGE Score", value=round(rouge_score, 3))
     c3.metric(label="METEOR Score", value=round(meteor_score, 3))
 
-    st.image(img, caption=hypothesis, use_column_width=True)
+    st.image(img, use_column_width=True)
+
 
 with col3:
     st.write(" ")
@@ -49,5 +50,8 @@ with col3:
 
 with st.container():
     c1, c2, c3 = st.columns((1, 6, 1))
+    c2.header("Hypthesis:")
+    c2.write(hypothesis)
+    c2.header("References:")
     for ref in references:
         c2.write(ref)
