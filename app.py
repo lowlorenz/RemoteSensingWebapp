@@ -14,7 +14,7 @@ x = st.slider("Image Id", max_value=3149)
 references = []
 for i in range(5):
     with open(f"test/test_references_{i}.txt", "r") as f:
-        references.append(f.read().split("\n")[x].replace(" .", ".")))
+        references.append(f.read().split("\n")[x].replace(" .", "."))
 
 with open(f"test/test_hypothesis.txt", "r") as f:
     hypothesis = f.read().split("\n")[x]
