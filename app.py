@@ -14,7 +14,7 @@ x = st.slider("Image Id", max_value=3149)
 references = []
 for i in range(5):
     with open(f"test/test_references_{i}.txt", "r") as f:
-        references.append(f.read().split("\n")[x])
+        references.append(f.read().split("\n")[x].replace(" .", ".")))
 
 with open(f"test/test_hypothesis.txt", "r") as f:
     hypothesis = f.read().split("\n")[x]
@@ -22,10 +22,13 @@ with open(f"test/test_hypothesis.txt", "r") as f:
 with open(f"test/test_images.txt", "r") as f:
     image = f.read().split("\n")[x]
 
+hypothesis_no_punc = hypothesis.replace(".", "")
+references_no_punc = [ref.replace(" .", "") for ref in references]
 
-bleu_score = bleu(references, hypothesis)
-rouge_score = rouge(references, hypothesis)
-meteor_score = meteor(references, hypothesis)
+
+bleu_score = bleu(references_no_punc, hypothesis_no_punc)
+rouge_score = rouge(references_no_punc, hypothesis_no_punc)
+meteor_score = meteor(references_no_punc, hypothesis_no_punc)
 
 
 col1, col2, col3 = st.columns((1, 3, 1))
