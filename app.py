@@ -5,8 +5,7 @@ import PIL.Image as Image
 from evaluation import bleu, rouge, meteor
 
 url = "https://github.com/lowlorenz/remote-sensing-image-captioning"
-st.write("check out this [link](%s)" % url)
-st.markdown("check out this [link](%s)" % url)
+st.write("⭐ Source code available under: [Github](%s) ⭐" % url)
 
 x = st.slider("Image Id", max_value=3149)
 
