@@ -53,7 +53,7 @@ with col3:
 
 with st.container():
     c1, c2, c3 = st.columns((1, 6, 1))
-    c2.header("Hypthesis:")
+    c2.header("Hypothesis:")
     c2.write(hypothesis)
     c2.header("References:")
     for ref in references:
